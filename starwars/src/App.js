@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
+import StarWarsList from './components/StarWarsList';
+
 
 class App extends Component {
   constructor() {
@@ -24,6 +26,7 @@ class App extends Component {
       .then(data => {
         this.setState({ starwarsChars: data.results });
       })
+
       .catch(err => {
         throw new Error(err);
       });
@@ -33,6 +36,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1 className="Header">React Wars</h1>
+        <StarWarsList starwarsChars={this.state.starwarsChars} />
       </div>
     );
   }
