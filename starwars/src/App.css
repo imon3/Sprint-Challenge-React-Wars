@@ -10,6 +10,7 @@
 /* write your parent styles in here for your App.js */
 
 ul {
+    list-style-type: none;
     font-size: 2rem;
     color: #1073e6;
     text-shadow: 1px 1px 5px #fff
