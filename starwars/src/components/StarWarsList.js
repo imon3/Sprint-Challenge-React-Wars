@@ -3,9 +3,8 @@ import React from 'react';
 function StarWarsList(props) {
     return (
         <ul>
-            {props.starwarsChars.map(starwarsChar => {
-                console.log(starwarsChar);
-                return <li>{starwarsChar.name}</li>
+            {props.starwarsChars.map((starwarsChar, index) => {
+                return <li key={index}>{starwarsChar.name}</li>
             })}
         </ul>
     )
