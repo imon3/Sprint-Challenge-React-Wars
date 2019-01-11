@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './DogApp.css';
+import Header from './components/Header';
 
 
 
@@ -15,7 +16,7 @@ class DogApp extends Component {
 
 
 componentDidMount() {
-    this.getCharacters('https://swapi.co/api/people');
+    this.getCharacters('https://dog.ceo/api/breeds/list/all');
 }
 
 getCharacters = URL => {
@@ -28,7 +29,7 @@ getCharacters = URL => {
         })
         .then(data => {
             console.log(data);
-            this.setState({ dogs: data.results });
+            this.setState({ dogs: data.message });
         })
 
         .catch(err => {
@@ -39,7 +40,7 @@ getCharacters = URL => {
 render() {
     return (
         <div className="DogApp">
-
+            <Header />
         </div>
     );
 }
